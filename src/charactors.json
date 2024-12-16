@@ -1,0 +1,172 @@
+{
+  "beta": {
+    "name": "ベータ",
+    "cost": 2,
+    "rarity": 0
+  },
+  "deucalion": {
+    "name": "デュカリオン",
+    "cost": 2,
+    "rarity": 0
+  },
+  "cherubim": {
+    "name": "ケルビム",
+    "cost": 3,
+    "rarity": 2
+  },
+  "elfin": {
+    "name": "エルフィン",
+    "cost": 3,
+    "rarity": 2
+  },
+  "katerina": {
+    "name": "カタリナ",
+    "cost": 1.5,
+    "rarity": 1
+  },
+  "orchid": {
+    "name": "オーキッド",
+    "cost": 1.5,
+    "rarity": 1
+  },
+  "ffreedo": {
+    "name": "フリード",
+    "cost": 2.5,
+    "rarity": 2
+  },
+  "hikari": {
+    "name": "ヒカリ",
+    "cost": 3,
+    "rarity": 2
+  },
+  "qiuyu": {
+    "name": "シュウウ",
+    "cost": 3,
+    "rarity": 2
+  },
+  "aida": {
+    "name": "アイーダ",
+    "cost": 2,
+    "rarity": 1
+  },
+  "zakharova": {
+    "name": "ザハロワ",
+    "cost": 2,
+    "rarity": 1
+  },
+  "snowowl": {
+    "name": "スノーウォル",
+    "cost": 1.5,
+    "rarity": 1
+  },
+  "pallas": {
+    "name": "パラス",
+    "cost": 2,
+    "rarity": 1
+  },
+  "griffin": {
+    "name": "グリフィン",
+    "cost": 3,
+    "rarity": 3
+  },
+  "xiaoling": {
+    "name": "シャオリン",
+    "cost": 2.5,
+    "rarity": 2
+  },
+  "kaze": {
+    "name": "カゼ",
+    "cost": 2.5,
+    "rarity": 2
+  },
+  "seraph": {
+    "name": "セラフィム",
+    "cost": 2,
+    "rarity": 2
+  },
+  "sharp": {
+    "name": "シャープ",
+    "cost": 2.5,
+    "rarity": 2
+  },
+  "roland": {
+    "name": "ローランド",
+    "cost": 1.5,
+    "rarity": 1
+  },
+  "aliz": {
+    "name": "アリス",
+    "cost": 2.5,
+    "rarity": 3
+  },
+  "scorpion": {
+    "name": "スコーピオン",
+    "cost": 2,
+    "rarity": 1
+  },
+  "convallaria": {
+    "name": "スズラン",
+    "cost": 3,
+    "rarity": 3
+  },
+  "virtues": {
+    "name": "ヴァーチェ",
+    "cost": 2,
+    "rarity": 3
+  },
+  "skysaber": {
+    "name": "スカイセーバー",
+    "cost": 2.5,
+    "rarity": 3
+  },
+  "yammyn": {
+    "name": "ヤミン",
+    "cost": 1.5,
+    "rarity": 3
+  },
+  "cavalry": {
+    "name": "キャヴァリー",
+    "cost": 3,
+    "rarity": 3
+  },
+  "xviii": {
+    "name": "十八号",
+    "cost": 2.5,
+    "rarity": 1
+  },
+  "rasiel": {
+    "name": "ラジエル",
+    "cost": 3,
+    "rarity": 2
+  },
+  "cygnus": {
+    "name": "シグナス",
+    "cost": 2.5,
+    "rarity": 3
+  },
+  "angelis": {
+    "name": "アンジェリス",
+    "cost": 2.5,
+    "rarity": 3
+  },
+  "shadow": {
+    "name": "影",
+    "cost": 3,
+    "rarity": 3
+  },
+  "emika": {
+    "name": "咲迦",
+    "cost": 2,
+    "rarity": 3
+  },
+  "qingni": {
+    "name": "チンニ",
+    "cost": 2,
+    "rarity": 3
+  },
+  "darkstar": {
+    "name": "ダークスター",
+    "cost": 2,
+    "rarity": 3
+  }
+}
