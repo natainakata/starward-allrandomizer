@@ -1,11 +1,10 @@
 import { useState } from "react";
 import Data from "./charactors.json";
-type Charactor = {
-  name: string;
-  cost: 1.5 | 2 | 2.5 | 3;
-  rarity: 0 | 1 | 2 | 3;
-  burst?: string;
-};
+import { Charactor } from "./types/charactor";
+import RollButton from "./components/rollButton";
+import RolledCharactorList from "./components/rolledCharactorList";
+import Charactors from "./components/charactors";
+
 const bursts = ["F", "S", "M", "D", "B"];
 
 function App() {
@@ -16,15 +15,28 @@ function App() {
   ]);
   const [rolledCharactors, setRolledCharactors] = useState<Charactor[]>([]);
 
-  const rollChallactors = (array: Charactor[]) => {
-    const temp = array.slice();
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const charactor = charactors[e.target.value];
+    if (!getedCharactors.includes(charactor)) {
+      setGetedCharactors([...getedCharactors, charactor]);
+    } else if (charactor.rarity > 0) {
+      setGetedCharactors(
+        getedCharactors.filter((getedCharactor) => getedCharactor !== charactor)
+      );
+    }
+  };
+
+  const rollChallactors = () => {
+    const temp = getedCharactors.slice();
     for (let i = temp.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
       [temp[i], temp[j]] = [temp[j], temp[i]];
     }
-    const result = temp.slice(0, 4);
-    result.map((charactor) => {
-      charactor.burst = bursts[Math.floor(Math.random() * bursts.length)];
+    const result = temp.slice(0, 4).map((charactor) => {
+      return {
+        ...charactor,
+        burst: bursts[Math.floor(Math.random() * bursts.length)],
+      };
     });
     setRolledCharactors([...result]);
   };
@@ -41,57 +53,13 @@ function App() {
           <li>地獄が始まります。</li>
         </ol>
       </div>
-      <div
-        className="Charactors"
-        style={{ display: "flex", alignItems: "center", flexWrap: "wrap" }}
-      >
-        {Object.keys(charactors).map((key) => {
-          const charactor = charactors[key] as Charactor;
-          return (
-            <div className="Charactor" key={key}>
-              <label>
-                <input
-                  type="checkbox"
-                  checked={
-                    charactor.rarity === 0 ||
-                    getedCharactors.includes(charactor)
-                  }
-                  onChange={() => {
-                    if (!getedCharactors.includes(charactor)) {
-                      setGetedCharactors([...getedCharactors, charactor]);
-                    } else if (charactor.rarity > 0) {
-                      setGetedCharactors(
-                        getedCharactors.filter(
-                          (getedCharactor) => getedCharactor !== charactor
-                        )
-                      );
-                    }
-                  }}
-                />
-                {charactor.name}
-              </label>
-            </div>
-          );
-        })}
-      </div>
-      <button
-        onClick={() => {
-          rollChallactors(getedCharactors);
-        }}
-      >
-        抽選
-      </button>
-      {rolledCharactors.length > 0 && (
-        <div className="RolledCharactors">
-          {rolledCharactors.map((charactor) => {
-            return (
-              <div className="RolledCharactor" key={charactor.name}>
-                {charactor.name} {charactor.burst}
-              </div>
-            );
-          })}
-        </div>
-      )}
+      <Charactors
+        onChange={handleChange}
+        getedCharactors={getedCharactors}
+        charactors={charactors}
+      />
+      <RollButton onClick={rollChallactors} charactors={getedCharactors} />
+      <RolledCharactorList charactors={rolledCharactors} />
     </div>
   );
 }
