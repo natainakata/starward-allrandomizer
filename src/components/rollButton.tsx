@@ -1,8 +1,6 @@
-import { Charactor } from "../types/charactor";
-
 type Props = {
   onClick: () => void;
-  charactors: Charactor[];
+  charactors: string[];
 };
 
 const RollButton = ({ onClick, charactors }: Props) => {
