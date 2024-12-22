@@ -3,7 +3,7 @@ import CharactorCheckbox from "./charactorCheckbox";
 
 type Props = {
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  getedCharactors: Charactor[];
+  getedCharactors: string[];
   charactors: Record<string, Charactor>;
 };
 
@@ -22,7 +22,7 @@ const Charactors = ({ onChange, getedCharactors, charactors }: Props) => {
                 onChange={onChange}
                 charactorKey={key}
                 children={charactor.name}
-                defaultChecked={getedCharactors.includes(charactor)}
+                defaultChecked={getedCharactors.includes(key)}
               />
             ) : (
               <CharactorCheckbox

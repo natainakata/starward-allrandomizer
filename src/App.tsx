@@ -9,17 +9,33 @@ const bursts = ["F", "S", "M", "D", "B"];
 
 function App() {
   const charactors = Data as Record<string, Charactor>;
-  const [getedCharactors, setGetedCharactors] = useState<Charactor[]>([
-    charactors.beta,
-    charactors.deucalion,
-  ]);
+  const defaultCharactors = Object.keys(charactors).filter(
+    (keys) => charactors[keys].rarity === 0
+  );
+  const [getedCharactors, setGetedCharactors] = useState<string[]>(
+    localStorage.getItem("getedCharactors")
+      ? JSON.parse(localStorage.getItem("getedCharactors") as string)
+      : [...defaultCharactors]
+  );
   const [rolledCharactors, setRolledCharactors] = useState<Charactor[]>([]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const charactor = charactors[e.target.value];
+    const charactor = e.target.value;
     if (!getedCharactors.includes(charactor)) {
+      localStorage.setItem(
+        "getedCharactors",
+        JSON.stringify([...getedCharactors, charactor])
+      );
       setGetedCharactors([...getedCharactors, charactor]);
-    } else if (charactor.rarity > 0) {
+    } else if (charactors[charactor].rarity > 0) {
+      localStorage.setItem(
+        "getedCharactors",
+        JSON.stringify(
+          getedCharactors.filter(
+            (getedCharactor) => getedCharactor !== charactor
+          )
+        )
+      );
       setGetedCharactors(
         getedCharactors.filter((getedCharactor) => getedCharactor !== charactor)
       );
@@ -33,8 +49,9 @@ function App() {
       [temp[i], temp[j]] = [temp[j], temp[i]];
     }
     const result = temp.slice(0, 4).map((charactor) => {
+      const rolled = charactors[charactor] as Charactor;
       return {
-        ...charactor,
+        ...rolled,
         burst: bursts[Math.floor(Math.random() * bursts.length)],
       };
     });
