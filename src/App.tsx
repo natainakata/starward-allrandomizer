@@ -77,6 +77,13 @@ function App() {
       />
       <RollButton onClick={rollChallactors} charactors={getedCharactors} />
       <RolledCharactorList charactors={rolledCharactors} />
+      <div className="ChangeLog">
+        <h2>更新履歴</h2>
+        <ul>
+          <li>2024/12/22: v1.0.1 選択したキャラクターを保持するようにした</li>
+          <li>2024/12/16: v1.0.0 公開</li>
+        </ul>
+      </div>
     </div>
   );
 }
