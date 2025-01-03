@@ -168,5 +168,10 @@
     "name": "ダークスター",
     "cost": 2,
     "rarity": 3
+  },
+  "valkia": {
+    "name": "ヴァルキア",
+    "cost": 2.5,
+    "rarity": 3
   }
 }

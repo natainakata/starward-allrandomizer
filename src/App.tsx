@@ -62,6 +62,13 @@ function App() {
     <div className="App">
       <div className="About">
         <h1>星の翼オールランダム抽選器</h1>
+        <h2>おしらせ</h2>
+        <p>公式Discord管理人のオリゼーさんが改良版をリリースしました。</p>
+        <p>
+          今後は
+          <a href="https://syuna05.github.io/Starwardallrandom/">こちら</a>
+          をご利用ください。
+        </p>
         <p>
           星の翼でオールランダムを疑似的に再現するためのルール説明と抽選器です。
         </p>
@@ -89,6 +96,7 @@ function App() {
       <div className="ChangeLog">
         <h2>更新履歴</h2>
         <ul>
+          <li>2025/01/03: v1.1.0 ヴァルキア追加</li>
           <li>2024/12/22: v1.0.1 選択したキャラクターを保持するようにした</li>
           <li>2024/12/16: v1.0.0 公開</li>
         </ul>
