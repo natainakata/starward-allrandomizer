@@ -173,5 +173,10 @@
     "name": "ヴァルキア",
     "cost": 2.5,
     "rarity": 3
+  },
+  "rhine": {
+    "name": "ライン",
+    "cost": 3,
+    "rarity": 3
   }
 }
